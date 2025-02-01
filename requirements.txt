@@ -4,3 +4,4 @@ langchain-groq===0.2.4
 chromadb==0.6.3
 streamlit==1.41.1
 pandas==2.2.3
+sqlite3 >= 3.35.0
