@@ -19,12 +19,17 @@ A web application that generates personalized and professional cold emails for j
 ## Installation
 
 ### 1. Clone the Repository
-git clone https://github.com/your-username/cold-email-generator.git
+```bash
+git clone https://github.com/your-username/cold-email-generator.git 
 cd cold-email-generator
+```
+
 
 ## Usage
 ### 1. Run the Streamlit App
+```bash
 streamlit run app.py
+```
 
 ### 2. Interact with the App
 - Enter a job posting URL in the input field.
