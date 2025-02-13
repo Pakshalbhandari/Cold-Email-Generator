@@ -23,12 +23,12 @@ class Chain:
             ### VALID JSON (NO PREAMBLE):
             """
         )
+        print("Insides calls")
         chain_extract = prompt_extract | self.llm
         res = chain_extract.invoke(input={"page_data": cleaned_text})
         try:
             json_parser = JsonOutputParser()
             res = json_parser.parse(res.content)
-            res = res[0]
         except OutputParserException:
             raise OutputParserException("Context too big. Unable to parse jobs.")
         return res if isinstance(res, list) else [res]

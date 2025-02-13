@@ -1,9 +1,10 @@
 import streamlit as st
 from langchain_community.document_loaders import WebBaseLoader
-
+import sys
 from chains import Chain
 from myskills import Skills
 from utils import clean_text
+import traceback
 
 
 def create_streamlit_app(llm, skills, clean_text):
@@ -21,7 +22,6 @@ def create_streamlit_app(llm, skills, clean_text):
             loader = WebBaseLoader([url_input])
             raw_data = loader.load().pop().page_content
             data = clean_text(raw_data)
-            
             # Load skills and extract jobs
             skills.load_skills()
             jobs = llm.extract_jobs(data)
@@ -34,7 +34,6 @@ def create_streamlit_app(llm, skills, clean_text):
             st.write(jobs)
             job = jobs[0]
             job_skills = job.get('skills', [])
-            
             # Query portfolio for relevant links
             try:
                 links = skills.query_links(job_skills)
@@ -49,7 +48,7 @@ def create_streamlit_app(llm, skills, clean_text):
                 st.error(f"Failed to generate email: {e}")
         
         except Exception as e:
-            st.error(f"An Error Occurred: {e}")
+            st.error(f"An Error Occurred: {e} ")
 
 
 
