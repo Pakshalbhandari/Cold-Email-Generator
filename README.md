@@ -27,9 +27,7 @@ cd cold-email-generator
 
 ## Usage
 ### 1. Run the Streamlit App
-```bash
-streamlit run app.py
-```
+streamlit run app/main.py
 
 ### 2. Interact with the App
 - Enter a job posting URL in the input field.
