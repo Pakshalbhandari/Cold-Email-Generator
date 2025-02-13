@@ -20,7 +20,7 @@ A web application that generates personalized and professional cold emails for j
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/cold-email-generator.git
+git clone https://github.com/Pakshalbhandari/Cold-Email-Generator.git
 cd cold-email-generator
 ```
 
